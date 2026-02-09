@@ -1,0 +1,313 @@
+/* Основные настройки */
+:root {
+    --primary-color: #6a3093; /* Фиолетовый из иконки */
+    --secondary-color: #a044ff; /* Светло-фиолетовый */
+    --accent-gold: #ffd700; /* Золотой для акцентов */
+    --bg-dark: #0a0a0a; /* Глубокий черный фон */
+    --text-light: #ffffff;
+    --text-dim: #b3b3b3;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-dark);
+    /* Глубокий, атмосферный градиент */
+    background-image: radial-gradient(circle at center top, #1a0f2e, #000000);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Фон с частицами */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Помещаем назад */
+    opacity: 0.6; /* Чтобы не отвлекал */
+}
+
+/* Логотип студии */
+.studio-logo-container {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    z-index: 10;
+}
+
+.studio-logo {
+    height: 40px; /* Подбери оптимальный размер */
+    width: auto;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.studio-logo:hover {
+    opacity: 1;
+}
+
+/* Основной контейнер */
+.container {
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Иконка игры - ГЕРОЙ */
+.icon-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.game-icon {
+    width: 140px;
+    height: 140px;
+    border-radius: 28px;
+    /* Мощное магическое свечение */
+    box-shadow: 0 10px 40px -10px rgba(160, 68, 255, 0.6), 0 0 20px rgba(160, 68, 255, 0.3) inset;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Анимация парения */
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); } /* Плавное движение вверх-вниз */
+    100% { transform: translateY(0px); }
+}
+
+.game-icon:hover {
+    transform: scale(1.05) translateY(-5px); /* Увеличение при наведении */
+    box-shadow: 0 15px 50px -10px rgba(160, 68, 255, 0.8), 0 0 30px rgba(160, 68, 255, 0.5) inset;
+}
+
+/* Типографика */
+h1 {
+    font-size: 3rem;
+    margin: 10px 0;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+.gradient-text {
+    background: none; /* Убираем градиент */
+    color: white;     /* Просто чистый белый */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Легкое свечение букв */
+    -webkit-text-fill-color: initial;
+    animation: none;
+}
+
+@keyframes shine {
+    to { background-position: 200% center; }
+}
+
+.tagline {
+    color: var(--text-dim);
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.description {
+    line-height: 1.7;
+    color: #d1d1d1;
+    margin-bottom: 50px;
+    max-width: 500px;
+    font-size: 1.05rem;
+}
+
+.description b {
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+/* Кнопки */
+.store-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 12px 30px;
+    border-radius: 16px; /* Современные скругления */
+    text-decoration: none;
+    color: white;
+    width: 280px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+.btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.btn span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.btn b {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.btn i {
+    font-size: 32px;
+    margin-right: 20px;
+}
+
+/* Активная кнопка Google Play */
+.google-play-btn {
+    /* Вкусный градиентный фон */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    box-shadow: 0 4px 15px rgba(106, 48, 147, 0.4);
+}
+
+/* Фирменные цвета Google в переменных для удобства */
+:root {
+    --g-blue: #4285F4;
+    --g-red: #EA4335;
+    --g-yellow: #FBBC04;
+    --g-green: #34A853;
+}
+
+.google-play-btn {
+    /* Черный фон, как у официального бейджа */
+    background: #000000;
+    /* Тонкая рамка, которая переливается */
+    border: 2px solid transparent;
+    position: relative;
+    z-index: 1;
+    
+    /* Магия градиентной рамки */
+    background-image: linear-gradient(#000, #000), 
+                      linear-gradient(90deg, var(--g-blue), var(--g-red), var(--g-yellow), var(--g-green));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Тень для объема */
+}
+
+.google-play-btn {
+    /* Чистый черный фон */
+    background: #000;
+    /* Тонкая серая рамка, едва заметная - это стиль Apple/Google */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+/* Иконка треугольника остается цветной - это главный акцент */
+.google-play-btn i {
+    font-size: 28px; /* Чуть меньше, аккуратнее */
+    margin-right: 15px;
+    background: linear-gradient(135deg, #4285F4 0%, #EA4335 30%, #FBBC04 60%, #34A853 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.google-play-btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.5); /* При наведении рамка светлеет */
+    box-shadow: 0 10px 30px rgba(66, 133, 244, 0.2); /* Очень легкое синее свечение */
+}
+
+/* Возвращаем белый цвет тексту */
+.google-play-btn .btn-text span,
+.google-play-btn .btn-text b {
+    color: white; 
+}
+
+/* Кнопка App Store */
+.app-store-btn {
+    background: rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.app-store-btn.disabled {
+    cursor: default;
+}
+
+.coming-soon-badge {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 0.7rem !important;
+    background: rgba(255,255,255,0.15);
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px !important;
+}
+
+/* Футер */
+footer {
+    margin-top: 80px;
+    padding-bottom: 30px;
+    font-size: 0.8rem;
+    color: #666;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.privacy-link {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.privacy-link:hover {
+    color: var(--text-light);
+}
+
+/* Анимации появления */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
